@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const p = new Promise((resolve, reject) => {
+            //resolve(4)
+            reject(2)
+        }) 
+    
+        /* premise prend deux parametres, par convention il y'a resolve et reject, resolve est une fonction qu'on appelle pour dire
+        que notre promesse a ete resolu et sinon que ca sera reject */
+        // si une promesse reussi, on capture ca avec then
+        /*p.then((n) => {
+            console.log(`Le nombre ${n}`)
+
+        }).catch((e) => {
+            console.log(`Echec ${e}`)
+        })*/
+        // si une promesse echou, on capture ca avec catch
+        function wait(duration) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(duration)
+                }, duration)
+            })
+        }
+        function waitAndFail(duration) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    reject(duration)
+                }, duration)
+            })
+        }
+        /*wait(1000).then(() => {
+        console.log("Hmmm")
+        return wait(1000)
+    }).then(() => {
+        console.log("Hm")
+        return waitAndFail(500)
+    }).catch((e) => {
+        console.log(`Erreur: ${e}`)
+    })*/
+    // creeons une fonction ansychrone, une fonction ansychrone retourne une promesse
+    const main = async function () {
+        try {
+            
+        await wait(2000)
+        console.log("Hmeme")
+        await waitAndFail(1000)
+        }
+        catch(e) {
+            console.log(e)
+        }
+    }
+    main()
+    // Js excecute le file principale et ce seulement apres son excecution que ca excecute les asynchrone
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

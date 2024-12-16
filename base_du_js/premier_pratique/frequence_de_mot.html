@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const phrase = "vous savez, moi je ne crois pas que vous pouvez vous passer de moi si je ne viens pas".replaceAll(",", "").toLowerCase()
+        const mots = phrase.split(" ")
+        let rep = {}
+        for (let mot of mots){
+            if (mot !== ""){
+                if (rep[mot]){
+                    rep[mot]++
+                } 
+                else {
+                    rep[mot] = 1
+                }
+            }
+            
+        }
+        const frequenciesArray = []
+        for (let k in rep){
+            frequenciesArray.push(
+                {
+                    word: k,
+                    count: rep[k]
+                }
+            )
+        }
+        frequenciesArray.sort((a, b) => {return b.count - a.count})
+        console.log(frequenciesArray)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

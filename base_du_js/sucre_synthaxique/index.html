@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // fonction fleche
+
+        const double = n => n * 2 // pour les fonctions fleches, c'est possible d'ecrire un parametre sans le mettre dans une parenthese
+        console.log(double(2))
+
+        // condition
+        const a = 3
+        const b = a || 5
+        /* ici pour creer une condition qui dit que si a est definie alors b aura la valeur de a sinon ca aura la valeur de 5, si a a pour 
+        valeur 0, alors ca va renvoyer false et b aura la valeur 5 mais si a la place de || on met ??, b ne prendra pas la valeur de a que
+        si a n'a pas de valeur, a noter qu'a la place de a et 5, on peut avoir deux fonctions
+        si la premier fonction renvoies false alors on execute la deuxieme fonction avec || mais si on a && si la premiere fonction
+        renvoiet true alors la deuxieme sera execute sinon la deuxieme sera pas execute*/
+        a ??= 3 // a aura la valeur 3 que si a est null ou n'a pas de valeur
+        a ||=3 // a aura la valeur de 3 que si a est false
+
+        const person = {firstname: "John", job: {name:"Boulanger"}}
+        // si jamais on n'est pas sur qu'il y'a job dans notre dictionnaire mais qu'on ne veut pas avoir d'erreur au cas job n'existe pas
+        // il suffit de mettre ? apres job, cette synthaxe permet d'acceder a certain propriete des elements sans qu'on soit sur que ca existe
+        console.log(person.job?.name)
+
+        // destricturation
+
+        const [premierNote, ...autreNotes] = [12, 18, 19]
+        console.log(autreNotes)
+        function canDrive ({age, pays, region = "Goma"}){
+            return true
+        }
+        canDrive({age: 24, pays: "RDC"})
+
+        const notesReverse = [...autreNotes].reverse()// on inverse le tableau autres notes sans pour autant le modifier
+        const message = a === 3 ? "3": "Pas 3" // si a vaut 3 message sera egale a 3 sinon message sera egale a pas 3
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

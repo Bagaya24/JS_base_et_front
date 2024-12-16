@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Book{
+            #page_actuelle = 1
+            constructor(titre, nombre_page){
+                this.titre = titre
+                this.nombre_page = nombre_page
+            }
+            nextPage(){
+                if (this.#page_actuelle < this.nombre_page){
+                    this.#page_actuelle ++
+                }
+                else return "Vous etes a la dernier page"
+            }
+            close(){
+                this.#page_actuelle = 1
+            }
+        }
+        class Library {
+            #listBooks = []
+            addBook(book){
+                this.#listBooks.push(book)
+            }
+            addBooks(books){
+                books.forEach(book => this.addBook(book))
+                /*
+                for (let book of books){
+                    this.#listBooks.push(book)
+                }*/
+            }
+            FindElementByItems(letter) {
+               /*for (let book of this.#listBooks){
+                    
+                    if (book.titre[0].toLowerCase() === letter.toLowerCase()){
+                        console.log(book)
+                    }
+               }*/
+               return this.#listBooks.filter((book) => book.titre[0].toLowerCase() === letter.toLowerCase())
+        }
+    }
+
+        const b = new Book("Arcane", 5)
+        const l = new Library()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

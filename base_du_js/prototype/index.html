@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Student {
+            ecole = "ITIG"
+            _notes = []
+            constructor (fisrtname, lastname){
+                this.fisrtname = fisrtname
+                this.lastname = lastname
+
+            }
+            set notes (v) {
+                if (Array.isArray(v)){
+                    this._notes = v
+                }
+            
+            }
+            get name (){
+                return `${this.fisrtname} ${this.lastname}`
+            }
+        }
+        class SuperStudent extends Student {
+            get name () {
+                return `Super ${super.name}`
+            }
+        }
+
+        const john = new SuperStudent("John", "Doe")
+        const jane = new Student("Jane", "Doe")
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

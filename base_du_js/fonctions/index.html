@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* Avec JS, si on declare une fonction comme nous l avons fait sur la premiere fonction, nous pouvons appeler 
+        cette fonction avec meme de la creer et ca ne va pas creer d erreur parce que JS met par defaut toute les 
+        fonctions en hauts lors de son execution, contrairrement que si on creer une fonction avec const, la, ca va
+         fonctionner normalement, si on declare la fonction normalement, ca aura une porte global */
+
+        function canDrive(age, pays) {
+            if ((age >= 18 && pays === "FR") ||
+                (age >= 19 && pays === "US")
+            ){
+                return true
+            }
+            return false
+
+        }
+        const canDrive2 = function (age, pays) {
+            if ((age >= 18 && pays === "FR") ||
+                (age >= 19 && pays === "US")
+            ){
+                return true
+            }
+            return false
+        }
+        
+        const fonctionFleche = (a ,b) => {
+            return a + b
+        }
+        console.log(fonctionFleche(3, 2))
+        const a = {
+            firstname: "John",
+            lastname: "Doe",
+            fullname: function () {
+                console.log(`${this.firstname} ${this.lastname}`)
+            }
+        }
+        a.fullname()
+        function maFonction () {
+            console.log(this)
+        }
+
+        maFonction.call(3)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

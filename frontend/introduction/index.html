@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./app.js" defer></script>
+</head>
+<body>
+    <p>
+        Dans notre fichier html, une fois nous avons la partie js, si on met avant notre body, automatique html va executer le js avant 
+        d'entrer au body, c'est qui peut entrainer de probleme de performance, voila pourquoi il est conseille d'ajouter defer ou juste
+        de mettre notre js apres la body. 
+        Si on declare une variable sur un fichier js dans un script puis dans si on cherche a l'utiliser dans un autre script, ca va 
+        marcher par ce que cette variable est globale, pour eviter de conflit, il est conseille de mettre le type='module'.
+    </p>
+    
+</body>
+
+</html>

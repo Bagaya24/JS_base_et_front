@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Rectangle {
+            constructor(largeur, longueur){
+                this.largeur = largeur
+                this.longueur = longueur
+            }
+            get perimeter (){
+                return (this.largeur + this.longueur) * 2
+            }
+            get isValid() {
+                return this.largeur > 0 && this.longueur > 0
+            }
+            isBiggerThan (forme){
+                return this.perimeter > forme.perimeter
+            }
+        }
+        class Square extends Rectangle {
+            constructor(cote){
+                
+                super(cote, cote)
+            }
+            
+        }
+        const r = new Rectangle(10, 20)
+        const r2 = new Rectangle(-2, 4)
+        const cc = new Square(4)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

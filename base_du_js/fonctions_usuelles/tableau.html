@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const notes = [23, 44, 12, 94]
+        console.log(notes.at(-1))// at permet de recuperer les elements dans un tableau avec leurs indices, on peut meme lui passer des indices negatives
+        const lettre = ["a", "b", "c"]
+        console.log(notes.concat(lettre)) // concat permet de concatener deux tableaux
+        const goodNotes = notes.filter((note) => note >= 40) // filter permet de faire un filtrer dans un tableau, ca prend en argument une fonction
+        console.log(goodNotes)
+        console.log(notes.find((note) => note > 10)) // find permet de trouver le premier element qui correspond a la condition, findindex nous renvoie l'index
+        console.log(lettre.includes("c")) // include permet de verifier si un element se trouve dans un tableau
+        console.log(lettre.join(" ")) // join permet de joindre different elements d'un tableau
+        console.log(notes.map((x) => x - 10))// map prend en premier parametre une fonction qui va permettre d'alterer les elements, ca va transfomer les elements du tableau
+        const persons = [
+            {firstname: "John", lastname: "Doe"},
+            {firstname: "Jane", lastname: "Doe"},
+            {firstname: "Marc", lastname: "Doe"},
+        ]
+        console.log(persons.map((person) => person.firstname + " " + person.lastname).join("\n"))
+        // pop efface le dernier element du tableau
+        // push augment un element dans le tableau
+        console.log(notes.reduce((acc, note) => {
+            return acc + note
+        }, 0)) // reduce est utile quand on a plusieur element mais qu'a la sortie on ne veut qu'une seule valeur, comme la somme de notes par exemple
+        // slice un peu comme en python, permet de recuper un certain nombre d'element dans un tableau sans modifier le tableau orginale
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

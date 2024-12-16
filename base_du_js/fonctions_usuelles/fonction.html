@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hello () {
+            console.log(this)
+        }
+        const hello2 = hello.bind(3) // bind permet de creer une autre fonction en lui attribuant la valeur de this qu'on ne pourra plus modifier
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

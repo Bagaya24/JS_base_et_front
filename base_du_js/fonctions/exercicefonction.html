@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // on va creer un nombre aleatoire avec 3 essaie
+        // isRight(n) renvoit true ou false en fonction de la reponse de l'utilisateur
+        // guess() demande a l'utilisateur de choisir un nombre
+        /*let number
+        let essaie = 0
+        
+        const guessNumber = function () { 
+            return Math.floor(Math.random() * 9)
+        }
+        num = guessNumber()
+       
+        const isRight = function (n) {
+            return n === num
+        }
+        const guess = function () {
+                return prompt("Devines le chiffre: ") * 1    
+            } 
+        while (essaie < 3) {
+            number = guess()
+            if (isRight(number)){
+                console.log("Felicitation!")
+                essaie = 4
+            }
+            else{
+                essaie ++
+                console.log("Essaie encore")
+            }
+            
+        }*/ 
+        // nombre premier
+        function isPremier(n){
+            for (let i = 2; i <= n; i ++){
+                if (i !== 0 && i !== 1 && i !== n){
+                    if (n % i === 0){
+                        return false
+                    }   
+                }
+                   
+            }
+            return true
+        }
+        
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

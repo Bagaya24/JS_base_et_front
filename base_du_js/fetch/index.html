@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // la, on fait appelle faire un api avec fetch, ca prend deux parametre, le lien et la methode (GET, POST, PUT ...)
+        //const response = fetch("https")
+        // mais il peut arriver que la requete prenne un peu de temps avant de donner une reponse favarable, donc pour attendre que la requete soit fini, on a deux technique
+        // soit on fait une fonction asynchrone soit fait un callback
+        // on va commencer avec le callback
+        /*fetch("https").then((response) => {
+            response.json() // on peut soit utilser response.text() ca va nous retourner une reponse sous format json mais on peut aussi utiliser response.json() qui nous retourne une reponse sur forme de dictionaire mais dans ce cas on aura une erreur si jamais notre requete n'a pas de reponse
+            .then(body => {
+                console.log(body)})
+        })*/
+        // pour regler ca, on peut verifier que la reponse nous retourner bien une reponse 200
+        // GET
+        /*const fetchUsers = async function() {
+            const response = await fetch("https",{
+            method: "GET",
+            headers: {
+                "Accept": "application/json",// c'est pour precisser les donnees qu'on attend
+                "Content-Type": "application/json" // c'est pour precisser les donnees qu'on envoie
+
+            }
+        }
+            )
+            if (response.ok == true) {
+                return response.json()
+            }
+            throw new Error("impossible de contacter le serveur")
+        }
+        fetchUsers().then(users => console.log(users)) */ 
+        // POST
+        const fetchUsers = async function() {
+            const response = await fetch("https",{
+            method: "POST",
+            headers: {
+                "Accept": "application/json",// c'est pour precisser les donnees qu'on attend
+                "Content-Type": "application/json" // c'est pour precisser les donnees qu'on envoie
+
+            },
+            body: JSON.stringify({title: "Mon premier titre"})
+        }
+            )
+            if (response.ok == true) {
+                return response.json()
+            }
+            throw new Error("impossible de contacter le serveur")
+        }
+        fetchUsers().then(users => console.log(users))
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
